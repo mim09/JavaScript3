@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="apple-touch-icon" href="./hyf.png" />
-    <link rel="shortcut icon" type="image/png" href="./hyf.png" />
-    <title>HackYourRepo</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <script src="./script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="apple-touch-icon" href="./hyf.png" />
+  <link rel="shortcut icon" type="image/png" href="./hyf.png" />
+  <title>HackYourRepo</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="header">
+      <h3>HYF Repositories</h3>
+      <select name="select" id="selectOption" class="select">
+      </select>
+    </section>
+    <div class="main-content">
+      <section class="repo-section common-feature">
+        <div class="repo-details">
+          <p class="title">Repository: </p>
+          <p class="repository">
+          <p>
+        </div>
+        <div class="repo-details">
+          <p class="title">Description: </p>
+          <p class="description">
+          <p>
+        </div>
+        <div class="repo-details">
+          <p class="title">Forks: </p>
+          <p class="forks">
+          <p>
+        </div>
+        <div class="repo-details">
+          <p class="title">Updated: </p>
+          <p class="updated">
+          <p>
+        </div>
+      </section>
+      <section class="contributors-section ">
+        <p class="contributors-title common-feature">Contributors</p>
+        <div class="contributor-detail common-feature">
+          <h6>name</h6>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="footer">HYF Repositories </footer>
+  <script src="./script.js"></script>
+</body>
+
 </html>
