@@ -1,3 +1,135 @@
 /* 
   Write here your CSS rules for HackYourRepo!
 */
+body{
+  margin:0;
+  padding:0;
+  font-family: 'Roboto', sans-serif;
+}
+.container{
+  width:100vw;
+  margin: auto;
+}
+.header{
+  background: #3f51b5;
+  /* display: flex; */
+  padding-left: 1.3rem;;
+  color:#ffffff;
+}
+select{
+  margin:1rem;
+  width:8rem;
+}
+.main-content{
+  display: flex;
+  flex-direction: column;
+  margin: 0.6rem;
+}
+.repo-details{
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+.title{
+  font-weight: 700;
+}
+.repo-name, .repo-details a {
+  margin: 0 0.5rem;
+}
+.repo-details .fork{
+  margin-left: 2.7rem;
+}
+.repo-update{
+  margin-left: 1.2rem;
+}
+.common-feature{
+  box-shadow: 1px 2px 5px #b1abab;
+  padding: 1rem;
+  margin: 0.3rem;
+}
+.common-feature p {
+  display: inline;
+  margin: 0 1rem;
+}
+.contributor-name {
+  margin: 0 1rem;
+}
+.contributor-detail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+p.contribution {
+  position: absolute;
+  right: 0;
+  justify-self: flex-end;
+  padding: 0.5rem 1rem;
+  background-color: #8f8f8f;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.contributors-title{
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 0;
+  box-shadow: none;
+  border-bottom: none;
+  color: #a9a9a9;
+} 
+img{
+  width: 50px;
+}
+footer{
+  background: #3f51b5;
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+}
+.error{
+  background-color: #cc2f2fa6;
+  padding: 1.5rem;
+}
+.page {
+    position: absolute;
+    bottom: 4rem;
+    display: flex;
+  }
+
+.page p {
+  border: 1px solid rgb(209, 207, 207);
+  padding: 1rem;
+  margin-left: 0;
+  color: rgb(247, 93, 93);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.page p.active {
+  background-color: rgb(247, 93, 93);
+  color: rgb(255, 255, 255);
+}
+
+/* media Queries */
+@media screen and (max-width: 768px) and (min-width: 481px){
+  .container{
+    max-width:80vw;
+  }
+  .contributors-section{
+   align-self: flex-end;
+   width: 75%;
+  }
+}
+@media screen and (min-width: 769px){
+  .container{
+    max-width:70vw;
+  }
+  .main-content{
+    flex-direction: row;
+    row-gap: 1rem;
+  }
+  .contributors-section, .repo-section{
+   width: 50%;
+   height: fit-content;
+  }
+}
