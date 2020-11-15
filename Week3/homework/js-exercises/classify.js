@@ -27,8 +27,8 @@ class Person {
 }
 
 class Horse extends Person {
-  constructor(what, name, age, color, eats, job) {
-    super(what, name, age, eats, job)
+  constructor(what, name, age, color, eats) {
+    super(what, name, age, eats)
     this.color = color
   }
   get horse() {
