@@ -1,6 +1,6 @@
 url = `https://opentdb.com/api.php?amount=10`;
 
-async function test(url, index) {
+async function fetchTrivia(url, index) {
   const response = await fetch(url);
   try {
     const data = await response.json();
@@ -31,14 +31,17 @@ async function layOut() {
 async function main() {
   let accordion = '';
   for (let i = 0; i < 5; i++) {
-    const randomQuestion = await test(url, Math.round(Math.random() * 10));
-
-    const ques = decodeURIComponent(randomQuestion.question);
-    accordion += `<button class="accordion">${ques}</button>
+    const randomQuestion = await fetchTrivia(url, Math.round(Math.random() * 10));
+    try {
+      const ques = decodeURIComponent(randomQuestion.question);
+      accordion += `<button class="accordion">${ques}</button>
             <div class="panel">
             <p>${randomQuestion.correct_answer}</p>
             </div>`;
-
+    }
+    catch (e) {
+      document.querySelector('.trivia').innerHTML = `<p>${e}<p>`;
+    }
 
   }
   document.querySelector('.trivia').innerHTML += accordion;
