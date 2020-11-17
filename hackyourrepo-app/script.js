@@ -5,7 +5,6 @@
 */
 const container = `<div id="container" class="container"> </div>
                    <footer class="footer">HYF Repositories</footer>`;
-// container.innerHTML = "hello";
 
 document.body.innerHTML = container;
 const url = 'https://api.github.com/orgs/HackYourFuture/repos?per_page=100';
@@ -40,33 +39,39 @@ function main(index) {
       let out = '';
       const result = fetchedData[index];
       out += `
-				<div class="repo-details"><span class='title'>Repository:</span><a href="https://github.com/HackYourFuture/${result.name}" target="_blank">${result.name}</a> </div>
-				<div class="repo-details"><span class='title'>Description:</span><span class="repo-desc">${result.description}</span></div>
-				<div class="repo-details"><span class='title'>Forks:</span><span class="repo-name fork">${result.forks}</span></div>
-				<div class="repo-details"><span class='title'>Updated:</span><span class="repo-update">${(result.updated_at).replace('Z', '').replace('T', ' ')}</span></div>
-			`;
+        <div class="repo-details"><span class='title'>Repository:</span>
+        <a href="https://github.com/HackYourFuture/${result.name}" target="_blank">${result.name}</a> </div>
+        <div class="repo-details"><span class='title'>Description:</span>
+        <span class="repo-desc">${result.description}</span></div>
+        <div class="repo-details"><span class='title'>Forks:</span>
+        <span class="repo-name fork">${result.forks}</span></div>
+        <div class="repo-details"><span class='title'>Updated:</span>
+        <span class="repo-update">${(result.updated_at).replace('Z', '').replace('T', ' ')}</span></div>
+      `;
 
       document.querySelector('.container').innerHTML += mainContent;
       document.querySelector('.repo-section').innerHTML = out;
-    }).then(contributions => {
+    })
+    .then(contributors => {
       const contFetch = fetchedData[index].contributors_url;
       let list = '';
       fetch(contFetch).then(contributorsResponse => contributorsResponse.json())
-
         .then(contributorsData => {
           let contributorsDataFetched = contributorsData;
           const contributors = contributorsDataFetched.map(contributor => {
             list += `
             <div class = "contributor-detail common-feature"> 
               <img src ="${contributor.avatar_url}"> 
-              <a class='contributor-name' href="https://github.com/${contributor.login}" target="_blank">${contributor.login}</a> 
+              <a class='contributor-name' href="https://github.com/${contributor.login}
+              " target="_blank">${contributor.login}</a> 
               <p class='contribution'>${contributor.contributions}</p>
             </div>`;
 
           })
           document.querySelector('.contributors-section').innerHTML += list;
         });
-    }).catch((error) => {
+    })
+    .catch((error) => {
       const errorMessage = `<p class="error">${error}<p>`;
       document.querySelector('.container').innerHTML += errorMessage;
     });

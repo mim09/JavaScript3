@@ -24,6 +24,7 @@ select{
   display: flex;
   flex-direction: column;
   margin: 0.6rem;
+  margin-bottom: 4rem;
 }
 .repo-details{
   display: flex;
